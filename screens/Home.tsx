@@ -1,11 +1,11 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import Avatar from "../components/avatar";
+import Avatar from "../components/Avatar";
 
 export default function Home() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.profile}>
-        <Text>Hi Austin!</Text>
+        <Text style={{ fontSize: 30, fontWeight: "900" }}>Hi Austin!</Text>
         <Avatar />
       </View>
     </SafeAreaView>
@@ -14,7 +14,7 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 40,
+    paddingTop: 60,
     paddingHorizontal: 20,
     flex: 1,
   },
@@ -22,5 +22,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
   },
 });
