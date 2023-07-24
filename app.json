@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "cdb479c7-09a4-4a25-8ae6-da6993021101"
+      }
+    },
+    "android": {
+      "package": "com.aviavinav.musicapp"
+    }
+  }
+}
