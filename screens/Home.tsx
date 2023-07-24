@@ -10,6 +10,7 @@ import Avatar from "../components/Avatar";
 import { useFonts } from "expo-font";
 import { useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
+// import { styled } from "styled-components/native";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -20,9 +21,17 @@ const data = [
   { id: 4, value: "Party" },
 ];
 
+// const Category = styled.View<{ id: number }>`
+//   width: 40%;
+//   margin: 15px;
+//   background-color: ${(props) => (props.id === 1 ? `red` : `blue`)};
+// `;
+
 export default function Home() {
   const [fontsLoaded, err] = useFonts({
     "CG-Bold": require("../assets/fonts/ClashGrotesk-Bold.otf"),
+    "CG-Medium": require("../assets/fonts/ClashGrotesk-Medium.otf"),
+    "CG-Semibold": require("../assets/fonts/ClashGrotesk-Semibold.otf"),
   });
 
   if (err) {
@@ -48,16 +57,68 @@ export default function Home() {
           </Text>
           <Avatar />
         </View>
-        <FlatList
-          data={data}
-          renderItem={({ item }) => (
-            <View style={styles.category}>
-              <Text>{item.value}</Text>
+        <View style={styles.categories}>
+          <View style={{ alignItems: "flex-start", width: "100%" }}>
+            <Text
+              style={{
+                fontFamily: "CG-Semibold",
+                fontSize: 20,
+                textAlign: "left",
+              }}
+            >
+              Categories
+            </Text>
+          </View>
+
+          <View style={{ flexDirection: "row" }}>
+            <View style={{ ...styles.category, backgroundColor: "#50bbcc" }}>
+              <Text
+                style={{
+                  fontFamily: "CG-Medium",
+                  fontSize: 15,
+                  color: "white",
+                }}
+              >
+                Indie
+              </Text>
             </View>
-          )}
-          numColumns={2}
-          style={styles.categories}
-        ></FlatList>
+            <View style={{ ...styles.category, backgroundColor: "#8650cc" }}>
+              <Text
+                style={{
+                  fontFamily: "CG-Medium",
+                  fontSize: 15,
+                  color: "white",
+                }}
+              >
+                Chill
+              </Text>
+            </View>
+          </View>
+          <View style={{ flexDirection: "row" }}>
+            <View style={{ ...styles.category, backgroundColor: "#b8214e" }}>
+              <Text
+                style={{
+                  fontFamily: "CG-Medium",
+                  fontSize: 15,
+                  color: "white",
+                }}
+              >
+                Pop
+              </Text>
+            </View>
+            <View style={{ ...styles.category, backgroundColor: "#2c801d" }}>
+              <Text
+                style={{
+                  fontFamily: "CG-Medium",
+                  fontSize: 15,
+                  color: "white",
+                }}
+              >
+                Party
+              </Text>
+            </View>
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -77,10 +138,15 @@ const styles = StyleSheet.create({
   },
   categories: {
     marginVertical: 20,
-    backgroundColor: "#fff",
+    width: "100%",
+    alignItems: "center",
+    textAlign: "left",
   },
   category: {
-    width: "40%",
-    margin: 15,
+    width: "45%",
+    margin: 5,
+    padding: 20,
+    borderRadius: 10,
+    alignItems: "center",
   },
 });
