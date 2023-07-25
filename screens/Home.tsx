@@ -10,7 +10,7 @@ import Avatar from "../components/Avatar";
 import { useFonts } from "expo-font";
 import { useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
-// import { styled } from "styled-components/native";
+import { styled } from "styled-components/native";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -21,11 +21,16 @@ const data = [
   { id: 4, value: "Party" },
 ];
 
-// const Category = styled.View<{ id: number }>`
-//   width: 40%;
-//   margin: 15px;
-//   background-color: ${(props) => (props.id === 1 ? `red` : `blue`)};
-// `;
+const Category = styled.View`
+  width: 40%;
+  margin: 15px;
+  &:first-child {
+    background-color: red;
+  }
+  &:nth-child(2) {
+    background-color: blue;
+  }
+`;
 
 export default function Home() {
   const [fontsLoaded, err] = useFonts({
@@ -58,7 +63,13 @@ export default function Home() {
           <Avatar />
         </View>
         <View style={styles.categories}>
-          <View style={{ alignItems: "flex-start", width: "100%" }}>
+          <View
+            style={{
+              alignItems: "flex-start",
+              width: "100%",
+              marginBottom: 10,
+            }}
+          >
             <Text
               style={{
                 fontFamily: "CG-Semibold",
