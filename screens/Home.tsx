@@ -11,6 +11,7 @@ import { useFonts } from "expo-font";
 import { useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import { styled } from "styled-components/native";
+import Card from "../components/Card";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -33,15 +34,11 @@ const Category = styled.View`
 `;
 
 export default function Home() {
-  const [fontsLoaded, err] = useFonts({
+  const [fontsLoaded] = useFonts({
     "CG-Bold": require("../assets/fonts/ClashGrotesk-Bold.otf"),
     "CG-Medium": require("../assets/fonts/ClashGrotesk-Medium.otf"),
     "CG-Semibold": require("../assets/fonts/ClashGrotesk-Semibold.otf"),
   });
-
-  if (err) {
-    console.log(err);
-  }
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
@@ -129,6 +126,162 @@ export default function Home() {
               </Text>
             </View>
           </View>
+        </View>
+
+        <View style={{ marginBottom: 20 }}>
+          <View
+            style={{
+              alignItems: "flex-start",
+              width: "100%",
+              marginBottom: 10,
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: "CG-Semibold",
+                fontSize: 20,
+                textAlign: "left",
+              }}
+            >
+              Recently Played
+            </Text>
+          </View>
+          <ScrollView horizontal>
+            <Card
+              size="small"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+            <Card
+              size="small"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+            <Card
+              size="small"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+            <Card
+              size="small"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+            <Card
+              size="small"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+          </ScrollView>
+        </View>
+
+        <View style={{ marginBottom: 20 }}>
+          <View
+            style={{
+              alignItems: "flex-start",
+              width: "100%",
+              marginBottom: 10,
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: "CG-Semibold",
+                fontSize: 20,
+                textAlign: "left",
+              }}
+            >
+              Today's Top Hits
+            </Text>
+          </View>
+          <ScrollView horizontal>
+            <Card
+              size="large"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+            <Card
+              size="large"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+            <Card
+              size="large"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+            <Card
+              size="large"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+            <Card
+              size="large"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+          </ScrollView>
+        </View>
+
+        <View style={{ marginBottom: 20 }}>
+          <View
+            style={{
+              alignItems: "flex-start",
+              width: "100%",
+              marginBottom: 10,
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: "CG-Semibold",
+                fontSize: 20,
+                textAlign: "left",
+              }}
+            >
+              Recommended For You
+            </Text>
+          </View>
+          <ScrollView horizontal>
+            <Card
+              size="large"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+            <Card
+              size="large"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+            <Card
+              size="large"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+            <Card
+              size="large"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+            <Card
+              size="large"
+              img="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60"
+              title="Mega Hit Mix"
+              subtitle="Taylor Swift, Justin Bieber, Ed Sheeran"
+            />
+          </ScrollView>
         </View>
       </ScrollView>
     </SafeAreaView>
