@@ -12,6 +12,7 @@ import { useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import { styled } from "styled-components/native";
 import Card from "../components/Card";
+import { borderRadius } from "../constants";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -310,7 +311,7 @@ const styles = StyleSheet.create({
     width: "45%",
     margin: 5,
     padding: 20,
-    borderRadius: 10,
+    borderRadius,
     alignItems: "center",
   },
 });
