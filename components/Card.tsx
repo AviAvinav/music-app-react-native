@@ -1,4 +1,5 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
+import { borderRadius } from "../constants";
 
 type CardProps = {
   size: "small" | "large";
@@ -15,10 +16,7 @@ export default function Card({ size, img, title, subtitle }: CardProps) {
   return (
     <TouchableOpacity style={{ marginRight: 10 }}>
       <View style={{ width, height, marginBottom: 5 }}>
-        <Image
-          source={{ uri: img }}
-          style={{ width, height, borderRadius: 10 }}
-        />
+        <Image source={{ uri: img }} style={{ width, height, borderRadius }} />
       </View>
       <View>
         <Text
